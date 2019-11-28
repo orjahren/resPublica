@@ -13,15 +13,13 @@
 let generer = hva => {
 	const ImagineDragons = "Imagine Dragons"
 	let data = ImagineDragons.split("")
-
 	let tilRetur = []
-	for(let i = 0; i < ImagineDragons.length; i++) {
+	while(tilRetur.length <= ImagineDragons.length*2) {
 		let index = Math.round(Math.random()*data.length)
 		tilRetur.push(data.splice(index, 1))
 	}
 	return tilRetur
 }
-
 let skriv = () => {
 	let res = document.getElementById("res")
 	res.innerHTML = "Result: "
