@@ -1,1 +1,39 @@
-<p><i>Hello World</i></p>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Imagine Dragons anagram maker</title>
+</head>
+<body>
+<h1>Imagine Dragons anagram generator</h1>
+<p id="res"></p>
+<button onclick="skriv()">Generate</button>
+<script type="text/javascript">
+"use strict"
+let generer = hva => {
+	const ImagineDragons = "Imagine Dragons"
+	let data = ImagineDragons.split("")
+
+	let tilRetur = []
+	for(let i = 0; i < ImagineDragons.length; i++) {
+		let index = Math.round(Math.random()*data.length)
+		tilRetur.push(data.splice(index, 1))
+	}
+	return tilRetur
+}
+
+let skriv = () => {
+
+	let res = document.getElementById("res")
+
+	res.innerHTML = "Result: "
+
+	let ny = generer()
+
+	res.innerHTML += ny.join("")
+}
+
+skriv()
+</script>
+</body>
+</html>
