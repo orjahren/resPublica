@@ -23,16 +23,10 @@ let generer = hva => {
 }
 
 let skriv = () => {
-
 	let res = document.getElementById("res")
-
 	res.innerHTML = "Result: "
-
-	let ny = generer()
-
-	res.innerHTML += ny.join("")
+	res.innerHTML += generer().join("")
 }
-
 skriv()
 </script>
 </body>
