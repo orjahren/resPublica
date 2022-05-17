@@ -6,26 +6,19 @@
 </head>
 <body>
 <h1>Imagine Dragons anagram generator</h1>
-<p id="res"></p>
-<button onclick="skriv()">Generate</button>
+<h2>Result:</h2>
+<p id="res">Imagine Dragons</p>
+<button onclick="main()">Generate</button>
 <script type="text/javascript">
 "use strict"
-let generer = hva => {
-	const ImagineDragons = "Imagine Dragons"
-	let data = ImagineDragons.split("")
-	let tilRetur = []
-	while(tilRetur.length <= ImagineDragons.length*2) {
-		let index = Math.round(Math.random()*data.length)
-		tilRetur.push(data.splice(index, 1))
-	}
-	return tilRetur
+let main = e => {
+	res.innerHTML = "Imagine Dragons"
+		.split("")
+		.map(val => ({val, sort: Math.random()}))
+		.sort((a, b) => a.sort - b.sort)
+		.map(({val}) => val)
+		.join("")	
 }
-let skriv = () => {
-	let res = document.getElementById("res")
-	res.innerHTML = "Result: "
-	res.innerHTML += generer().join("")
-}
-skriv()
 </script>
 </body>
 </html>
